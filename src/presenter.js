@@ -3,7 +3,7 @@ import {impuestar, calcularTotal, descuento, calcularDescuento} from "./impuesto
 
 const first = document.querySelector("#cantidad");
 const second = document.querySelector("#precio");
-const state = document.querySelector("#estado");
+var state = document.getElementById("estado");
 const form = document.querySelector("#totalizar-form");
 const rDiv = document.querySelector("#resultado-div");
 const iDiv = document.querySelector('#impuesto-div');

@@ -3,9 +3,6 @@ function impuestar(estado)
     let tasaImp = 0;
     switch(estado)
     {
-        case 'CA':
-            tasaImp = 0.0825;
-            break;
         case 'UT':
             tasaImp = 0.0665;
             break;
@@ -17,6 +14,9 @@ function impuestar(estado)
             break;
         case 'AL':
             tasaImp = 0.04;
+            break;
+        case 'CA':
+            tasaImp = 0.0825;
             break;
         default:
             break;
