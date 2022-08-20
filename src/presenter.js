@@ -1,22 +1,10 @@
-import {sumar,multiplicar} from "./sumador";
+import multiplicar from "./sumador";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
+const first = document.querySelector("#cantidad");
+const second = document.querySelector("#precio");
+const form = document.querySelector("#totalizar-form");
 const div = document.querySelector("#resultado-div");
-const sumBtn = document.querySelector("#SumBtn");
 const MultBtn = document.querySelector("#MultBtn")
-
-
-sumBtn.addEventListener("click", ()=>{
-
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-  console.log("funciona")
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
-
-});
 
 MultBtn.addEventListener("click", () => {
 
