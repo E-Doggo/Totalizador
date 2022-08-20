@@ -28,19 +28,19 @@ function impuestar(estado)
 function descuento(pedido)
 {
     let desc = 0; 
-    if (pedido >= 1000)
+    if (pedido >= 1000 && pedido < 3000)
     {
         desc = 0.03;
     }
-    else if(pedido >= 3000)
+    else if(pedido >= 3000 && pedido < 7000)
     {
         desc = 0.05;
     }
-    else if(pedido >= 7000)
+    else if(pedido >= 7000 && pedido < 10000)
     {
         desc = 0.07;
     }
-    else if(pedido >= 10000)
+    else if(pedido >= 10000 && pedido < 30000)
     {
         desc = 0.10;
     }

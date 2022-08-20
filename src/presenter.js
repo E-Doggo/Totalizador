@@ -22,7 +22,7 @@ MultBtn.addEventListener("click", () => {
   let imp = impuestar(state.value);
 
   rDiv.innerHTML = "<p>" + "Precio neto = " + pedido + "$ </p>";
-  dDiv.innerHTML = "<p>" + " Descuento (" + desc*100 +"%) = "+ multiplicar(pedido, desc) + "$ </p>";
-  iDiv.innerHTML = "<p>" + "Impuesto "+state.value+ " (" + imp*100 +"%) = "+ multiplicar(totDes, imp) + "$ </p>";
-  tDiv.innerHTML = "<p>" + "Total = " + calcularTotal(pedido, imp, desc) +  "$ </p>";
+  dDiv.innerHTML = "<p>" + " Descuento (" + (desc*100).toFixed(2) +"%) = "+ multiplicar(pedido, desc).toFixed(3) + "$ </p>";
+  iDiv.innerHTML = "<p>" + "Impuesto "+state.value+ " (" + imp*100 +"%) = "+ multiplicar(totDes, imp).toFixed(3) + "$ </p>";
+  tDiv.innerHTML = "<p>" + "Total = " + calcularTotal(pedido, imp, desc).toFixed(3) +  "$ </p>";
 });
