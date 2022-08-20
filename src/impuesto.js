@@ -51,14 +51,18 @@ function descuento(pedido)
     return desc;
 }
 
+function calcularDescuento(pedido, desc)
+{
+    return pedido - (pedido*desc);
+}
 
 function calcularTotal(pedido, tasaImp, desc)
 {
-    const prov = pedido-(pedido*desc);
+    const prov = calcularDescuento(pedido, desc);
     return prov+(prov*tasaImp);
 }
 
-export {impuestar, calcularTotal, descuento};
+export {impuestar, calcularTotal, descuento, calcularDescuento};
 
 
 

@@ -1,5 +1,5 @@
 import multiplicar from "./sumador";
-import {impuestar, calcularTotal, descuento } from "./impuesto";
+import {impuestar, calcularTotal, descuento, calcularDescuento} from "./impuesto";
 
 const first = document.querySelector("#cantidad");
 const second = document.querySelector("#precio");
@@ -13,15 +13,16 @@ const MultBtn = document.querySelector("#MultBtn");
 
 MultBtn.addEventListener("click", () => {
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+  const cant = Number.parseInt(first.value);
+  const precio = Number.parseInt(second.value);
 
-  let mult = multiplicar(firstNumber, secondNumber);
-  let desc = descuento(mult);
+  let pedido = multiplicar(cant, precio);
+  let desc = descuento(pedido);
+  let totDes = calcularDescuento(pedido, desc);
   let imp = impuestar(state.value);
 
-  rDiv.innerHTML = "<p>" + "Precio neto = " + mult + "$ </p>";
-  dDiv.innerHTML = "<p>" + " Descuento (" + desc*100 +"%) = "+ multiplicar(mult, desc) + "$ </p>";
-  iDiv.innerHTML = "<p>" + "Impuesto "+state.value+ " (" + imp*100 +"%) = "+ multiplicar(mult, imp) + "$ </p>";
-  tDiv.innerHTML = "<p>" + "Total = " + calcularTotal(mult, imp, desc) +  "$ </p>";
+  rDiv.innerHTML = "<p>" + "Precio neto = " + pedido + "$ </p>";
+  dDiv.innerHTML = "<p>" + " Descuento (" + desc*100 +"%) = "+ multiplicar(pedido, desc) + "$ </p>";
+  iDiv.innerHTML = "<p>" + "Impuesto "+state.value+ " (" + imp*100 +"%) = "+ multiplicar(totDes, imp) + "$ </p>";
+  tDiv.innerHTML = "<p>" + "Total = " + calcularTotal(pedido, imp, desc) +  "$ </p>";
 });
