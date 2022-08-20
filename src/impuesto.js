@@ -1,5 +1,3 @@
-
-
 function impuestar(estado)
 {
     let tasaImp = 0;
@@ -20,17 +18,47 @@ function impuestar(estado)
         case 'AL':
             tasaImp = 0.04;
             break;
+        default:
+            break;
     }
     return tasaImp;
 }
 
 
-function calcularImpuesto(mult, tasaImp)
+function descuento(pedido)
 {
-    return mult+(mult*tasaImp);
+    let desc = 0; 
+    if (pedido >= 1000)
+    {
+        desc = 0.03;
+    }
+    else if(pedido >= 3000)
+    {
+        desc = 0.05;
+    }
+    else if(pedido >= 7000)
+    {
+        desc = 0.07;
+    }
+    else if(pedido >= 10000)
+    {
+        desc = 0.10;
+    }
+    else if(pedido >= 30000)
+    {
+        desc = 0.15;
+    }
+    return desc;
 }
 
-export {impuestar, calcularImpuesto};
+
+function calcularTotal(pedido, tasaImp, desc)
+{
+    const prov = pedido-(pedido*desc);
+    return prov+(prov*tasaImp);
+}
+
+export {impuestar, calcularTotal, descuento};
 
 
 
